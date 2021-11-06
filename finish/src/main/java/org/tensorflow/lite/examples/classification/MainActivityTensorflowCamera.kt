@@ -71,19 +71,16 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
     // Contains the recognition result. Since  it is a viewModel, it will survive screen rotations
     private val recogViewModel: RecognitionListViewModel by viewModels()
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_tensorflow_camera)
 
-        //TODO FIX
         var btnAcceptResult = findViewById<Button>(R.id.btnAcceptResult)
 
         //TODO FIX
         btnAcceptResult.setOnClickListener {
             val intent = Intent(this@MainActivityTensorflowCamera, MainActivity::class.java)
+            intent.putExtra("beer", recognizedBeer)
             startActivity(intent)
         }
 
@@ -245,8 +242,6 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
             for (output in outputs) {
                 items.add(Recognition(output.label, output.score))
 
-                //TODO Return to main activity with label 'recognizedBeer' as extra parameter
-
                 if(output.score > maxMatch) {
                     maxMatch = output.score
 
@@ -255,25 +250,6 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
                         recognizedBeer = output.label
                         Log.i(TAG,"New max match: " + output.score + " from " + output.label)
                     }
-                    /*try{
-                        val recognizedBeer : String = output.label
-                        //Make data directory
-                        val dataDirectory = File(path, "DATA")
-                        dataDirectory.mkdirs()
-
-                        //Make file in data directory
-                        val file = File(dataDirectory, "beer.txt")
-
-                        //Write output.score to file in data directory
-                        FileOutputStream(file).use {
-                            it.write(recognizedBeer.toByteArray())
-                        }
-
-                        Log.i(TAG,"Worked!")
-
-                    }catch(e: Exception){
-                        e.printStackTrace()
-                    }*/
                 }
 
                 //TODO Remove as this is testing code for debugging purposes
