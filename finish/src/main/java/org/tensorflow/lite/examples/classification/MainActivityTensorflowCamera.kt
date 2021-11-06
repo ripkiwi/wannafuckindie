@@ -2,12 +2,14 @@ package org.tensorflow.lite.examples.classification
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Matrix
 import android.os.Bundle
+import android.os.Environment
 import android.util.Log
 import android.util.Size
 import android.widget.Button
@@ -30,9 +32,15 @@ import org.tensorflow.lite.examples.classification.viewmodel.RecognitionListView
 import org.tensorflow.lite.gpu.CompatibilityList
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.model.Model
+import java.io.File
+import java.io.FileOutputStream
 import java.util.concurrent.Executors
 
 // Constants
+val path = Environment.getDataDirectory()
+var maxMatch : Float = 0.0F
+var newMaxMatch : Float = 0.0F
+var recognizedBeer : String = ""
 private const val MAX_RESULT_DISPLAY = 2 // Maximum number of results displayed
 private const val TAG = "Beercognition" // Name for logging
 private const val REQUEST_CODE_PERMISSIONS = 999 // Return code after asking for permission
@@ -63,12 +71,15 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
     // Contains the recognition result. Since  it is a viewModel, it will survive screen rotations
     private val recogViewModel: RecognitionListViewModel by viewModels()
 
-    //TODO FIX
-    var btnAcceptResult = findViewById<Button>(R.id.btnAcceptResult)
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_tensorflow_camera)
+
+        //TODO FIX
+        var btnAcceptResult = findViewById<Button>(R.id.btnAcceptResult)
 
         //TODO FIX
         btnAcceptResult.setOnClickListener {
@@ -235,16 +246,38 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
                 items.add(Recognition(output.label, output.score))
 
                 //TODO Return to main activity with label 'recognizedBeer' as extra parameter
-                if(output.score > 0.74999) {
-                    val recognizedBeer = output.label
-                    //val intent = Intent(this@MainActivityTensorflowCamera, MainActivity::class.java).apply{
-                    //    putExtra("recognizedBeer",recognizedBeer)
-                    //}
-                    //startActivity(intent)
+
+                if(output.score > maxMatch) {
+                    maxMatch = output.score
+
+                    if(maxMatch > newMaxMatch){
+                        newMaxMatch = maxMatch
+                        recognizedBeer = output.label
+                        Log.i(TAG,"New max match: " + output.score + " from " + output.label)
+                    }
+                    /*try{
+                        val recognizedBeer : String = output.label
+                        //Make data directory
+                        val dataDirectory = File(path, "DATA")
+                        dataDirectory.mkdirs()
+
+                        //Make file in data directory
+                        val file = File(dataDirectory, "beer.txt")
+
+                        //Write output.score to file in data directory
+                        FileOutputStream(file).use {
+                            it.write(recognizedBeer.toByteArray())
+                        }
+
+                        Log.i(TAG,"Worked!")
+
+                    }catch(e: Exception){
+                        e.printStackTrace()
+                    }*/
                 }
 
                 //TODO Remove as this is testing code for debugging purposes
-                Log.i(TAG, "Label: " + output.label + " || Score: " + output.score)
+                Log.d(TAG, "Label: " + output.label + " || Score: " + output.score)
             }
 
 //            // START - Placeholder code at the start of the codelab. Comment this block of code out.
