@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+//TODO FIX STYLE
 public class DetailsActivity extends AppCompatActivity {
 
     private TextView txtYear;
@@ -35,6 +36,7 @@ public class DetailsActivity extends AppCompatActivity {
         txtBrewery = findViewById(R.id.txtDetailsBrouwerij);
         txtBeer = findViewById(R.id.txtDetails);
         txtInfo = findViewById(R.id.txtDetailsInfo);
+        //TODO PROGRAM BUTTON -> JUST GOES BACK TO MAIN ACTIVITY ITS SO DANG EASY
         btnReturn = findViewById(R.id.btnReturn);
         imgBeer = findViewById(R.id.imgDetails);
 
@@ -58,6 +60,7 @@ public class DetailsActivity extends AppCompatActivity {
                 imgBeer.setImageResource(R.drawable.stella);
                 break;
             case "duvel":
+                //TODO FILL
                 beerName = "";
                 beerBrewery = "";
                 beerInfo = "";
@@ -65,6 +68,7 @@ public class DetailsActivity extends AppCompatActivity {
                 beerYear = "";
                 break;
             case "tripel karmeliet":
+                //TODO FILL
                 beerName = "";
                 beerBrewery = "";
                 beerInfo = "";
@@ -72,6 +76,7 @@ public class DetailsActivity extends AppCompatActivity {
                 beerYear = "";
                 break;
             case "jupiler":
+                //TODO FILL
                 beerName = "";
                 beerBrewery = "";
                 beerInfo = "";
@@ -79,6 +84,7 @@ public class DetailsActivity extends AppCompatActivity {
                 beerYear = "";
                 break;
             case "cara":
+                //TODO FILL
                 beerName = "";
                 beerBrewery = "";
                 beerInfo = "";
