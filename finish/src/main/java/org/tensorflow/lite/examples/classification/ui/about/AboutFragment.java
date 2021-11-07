@@ -27,13 +27,13 @@ public class AboutFragment extends Fragment {
         binding = FragmentAboutBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textAbout;
+        /*final TextView textView = binding.textAbout;
         aboutViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
-        });
+        });*/
         return root;
     }
 

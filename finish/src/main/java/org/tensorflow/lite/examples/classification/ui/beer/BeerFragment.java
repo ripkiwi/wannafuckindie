@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -29,6 +30,7 @@ public class BeerFragment extends Fragment {
         binding = FragmentBeerBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        final ImageView imgConstruction = binding.imageView2;
         final TextView txtBeer = binding.txtBeer;
         final SearchView searchView = binding.searchView;
         final ListView listBeers = binding.lstBeers;

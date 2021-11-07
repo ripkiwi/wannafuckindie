@@ -16,4 +16,8 @@
     <string name="permission_deny_text">Vereiste permissies afgewezen...</string>
     <string name="beers_returnButton">Terug naar start</string>
     <string name="desc_logo">Beercognition logo</string>
+    <string name="under_construction">Onder Constructie</string>
+    <string name="about_text">Vertaling wordt aan gewerkt...</string>
+    <string name="about_team">Vertaling wordt aan gewerkt...</string>
+    <string name="sorry_construction">Vertaling wordt aan gewerkt...</string>
 </resources>

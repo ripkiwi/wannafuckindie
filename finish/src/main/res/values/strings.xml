@@ -19,4 +19,8 @@
     <string name="camera_acceptResult">Accept Result</string>
     <string name="beers_returnButton">Return to home</string>
     <string name="team_name" translatable="false">Beercognition BE</string>
+    <string name="under_construction">Under Construction</string>
+    <string name="about_text">write some text here...</string>
+    <string name="about_team">our team has some things to write...</string>
+    <string name="sorry_construction">Thank you for alpha testing our app. We apologize for the features under construction!</string>
 </resources>

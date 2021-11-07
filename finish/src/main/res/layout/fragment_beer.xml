@@ -13,6 +13,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/menu_beers"
         android:textSize="26sp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,6 +24,7 @@
         android:layout_height="30dp"
         android:layout_marginTop="35dp"
         android:background="#AAA9A9"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBeer" />
@@ -32,9 +34,21 @@
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:layout_marginTop="25dp"
+        android:clickable="true"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView"
-        android:clickable="true"/>
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/under_construction"
+        android:src="@drawable/under_construction"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
