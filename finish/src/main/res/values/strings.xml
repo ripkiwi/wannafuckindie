@@ -1,6 +1,5 @@
 <resources>
-    <string name="permission_deny_text" translatable="false">Required permissions denied. Exiting.</string>
-    <string name="tensorflow_lite_logo_description" translatable="false">TensorFlow Lite logo</string>
+    <string name="permission_deny_text">Required permissions denied. Exiting.</string>
     <string name="app_name">Beercognition</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
@@ -20,4 +19,5 @@
     <string name="details_desc_beer">Picture of your beer</string>
     <string name="desc_logo" translatable="false">Beercognition logo</string>
     <string name="camera_acceptResult">Accept Result</string>
+    <string name="beers_returnButton">Return to home</string>
 </resources>

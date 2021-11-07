@@ -135,7 +135,7 @@
             android:id="@+id/btnReturn"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:text="return yo" />
+            android:text="@string/beers_returnButton" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

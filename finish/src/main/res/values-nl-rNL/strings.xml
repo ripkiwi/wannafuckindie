@@ -14,4 +14,6 @@
     <string name="details_title">Details</string>
     <string name="details_desc_beer">Foto van je pint</string>
     <string name="camera_acceptResult">Aanvaard Resultaat</string>
+    <string name="permission_deny_text">Vereiste permissies afgewezen...</string>
+    <string name="beers_returnButton">Terug naar start</string>
 </resources>
