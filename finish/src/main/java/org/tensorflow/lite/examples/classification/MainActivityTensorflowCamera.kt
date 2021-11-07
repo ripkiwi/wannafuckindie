@@ -2,14 +2,12 @@ package org.tensorflow.lite.examples.classification
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Matrix
 import android.os.Bundle
-import android.os.Environment
 import android.util.Log
 import android.util.Size
 import android.widget.Button
@@ -21,7 +19,6 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import org.tensorflow.lite.examples.classification.ml.BeerModel
@@ -32,12 +29,9 @@ import org.tensorflow.lite.examples.classification.viewmodel.RecognitionListView
 import org.tensorflow.lite.gpu.CompatibilityList
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.model.Model
-import java.io.File
-import java.io.FileOutputStream
 import java.util.concurrent.Executors
 
 // Constants
-val path = Environment.getDataDirectory()
 var maxMatch : Float = 0.0F
 var newMaxMatch : Float = 0.0F
 var recognizedBeer : String = ""
@@ -75,7 +69,7 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_tensorflow_camera)
 
-        var btnAcceptResult = findViewById<Button>(R.id.btnAcceptResult)
+        val btnAcceptResult = findViewById<Button>(R.id.btnAcceptResult)
 
         btnAcceptResult.setOnClickListener {
             val intent = Intent(this@MainActivityTensorflowCamera, MainActivity::class.java)

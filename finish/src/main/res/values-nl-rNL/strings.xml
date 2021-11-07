@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Beercognition</string>
     <string name="startup_slogan">SCAN JE BIER</string>
     <string name="startup_slogan_2">DRINK MET PLEZIER</string>
     <string name="menu_home">Start</string>
@@ -16,4 +15,5 @@
     <string name="camera_acceptResult">Aanvaard Resultaat</string>
     <string name="permission_deny_text">Vereiste permissies afgewezen...</string>
     <string name="beers_returnButton">Terug naar start</string>
+    <string name="desc_logo">Beercognition logo</string>
 </resources>

@@ -14,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/beercognition" />
+        app:srcCompat="@drawable/beercognition"
+        android:contentDescription="@string/desc_logo" />
 
     <TextView
         android:id="@+id/txtSloganTop"
@@ -57,7 +58,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginBottom="5dp"
         android:fontFamily="@font/robotomono_bold"
-        android:text="©Team Swag"
+        android:text="@string/team_name"
         android:textColor="@color/cultured"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
