@@ -129,7 +129,7 @@
         <TextView
             android:id="@+id/txtDetailsInfo"
             android:layout_width="match_parent"
-            android:layout_height="260dp" />
+            android:layout_height="240dp" />
 
         <Button
             android:id="@+id/btnReturn"

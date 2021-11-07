@@ -6,43 +6,93 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/sorry_construction"
-        android:textAlignment="center"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/imgHome1"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@+id/imgHome3"
+        app:layout_constraintEnd_toStartOf="@+id/imgHome2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btnHomeScan"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:text="@string/menu_camera"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        tools:src="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/under_construction"
-        android:src="@drawable/under_construction"
-        app:layout_constraintBottom_toTopOf="@+id/btnHomeScan"
+        android:id="@+id/imgHome2"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imgHome1"
+        app:layout_constraintTop_toTopOf="@+id/imgHome1"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imgHome3"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imgHome4"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_home" />
+        app:layout_constraintTop_toBottomOf="@+id/imgHome1"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imgHome4"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imgHome3"
+        app:layout_constraintTop_toTopOf="@+id/imgHome3"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/txtHome1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/imgHome1"
+        app:layout_constraintStart_toStartOf="@+id/imgHome1"
+        app:layout_constraintTop_toBottomOf="@+id/imgHome1" />
+
+    <TextView
+        android:id="@+id/txtHome2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/imgHome2"
+        app:layout_constraintStart_toStartOf="@+id/imgHome2"
+        app:layout_constraintTop_toBottomOf="@+id/imgHome2" />
+
+    <TextView
+        android:id="@+id/txtHome4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/imgHome4"
+        app:layout_constraintStart_toStartOf="@+id/imgHome4"
+        app:layout_constraintTop_toBottomOf="@+id/imgHome4" />
+
+    <TextView
+        android:id="@+id/txtHome3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/imgHome3"
+        app:layout_constraintStart_toStartOf="@+id/imgHome3"
+        app:layout_constraintTop_toBottomOf="@+id/imgHome3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

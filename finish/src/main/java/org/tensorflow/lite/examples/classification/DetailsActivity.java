@@ -106,5 +106,6 @@ public class DetailsActivity extends AppCompatActivity {
         txtBrewery.setText(beerBrewery);
         txtAlcohol.setText(beerPercentage);
         txtYear.setText(beerYear);
+        txtInfo.setText(beerInfo);
     }
 }
