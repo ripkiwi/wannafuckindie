@@ -1,8 +1,8 @@
 package org.tensorflow.lite.examples.classification;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -30,24 +30,9 @@ public class MainActivity extends AppCompatActivity {
         Bundle recognized = this.getIntent().getExtras();
         if(recognized != null){
             String beer = recognized.getString("beer");
-            //TODO use the switch case
-            switch(beer){
-                case "leffe":
-                    //go to leffe fragment or someshit
-                    break;
-                case "stella artois":
-                    //stella fragment
-                    break;
-                case "duvel":
-                    //duvel fragment
-                    break;
-                case "tripel karmeliet":
-                    //tripel karmeliet fragment
-                    break;
-                case "jupiler":
-                    //jupiler fragment
-                    break;
-            }
+            Intent toBeerIntent = new Intent(this, DetailsActivity.class);
+            toBeerIntent.putExtra("beer",beer);
+            startActivity(toBeerIntent);
         }
 
         setSupportActionBar(binding.appBarMain.toolbar);

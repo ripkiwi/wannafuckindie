@@ -77,7 +77,6 @@ class MainActivityTensorflowCamera : AppCompatActivity() {
 
         var btnAcceptResult = findViewById<Button>(R.id.btnAcceptResult)
 
-        //TODO FIX
         btnAcceptResult.setOnClickListener {
             val intent = Intent(this@MainActivityTensorflowCamera, MainActivity::class.java)
             intent.putExtra("beer", recognizedBeer)
